@@ -82,7 +82,7 @@ In this **DevOps project**, I demonstrate how to **deploy a ZOMATO Clone App** u
 
 ### LinkedIn
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayshak-0077B5?style=flat-square&logo=linkedin&logoColor=white)](YOUR_LINKEDIN_PROFILE_URL)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Ayshak-0077B5?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aysha-k-b933b5290/)
 
 ### GitHub
 
