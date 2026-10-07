@@ -44,11 +44,10 @@ In this **DevOps project**, I demonstrate how to **deploy a ZOMATO Clone App** u
 
 ## 🔗 **GitHub Repository**
 
-[![GitHub](https://img.shields.io/badge/GitHub-ZOMATO--Project-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Ayshak532/Zomato-Project.git)
+[![GitHub](https://img.shields.io/badge/GitHub-ZOMATO--Project-181717?style=flat-square&logo=github&logoColor=white)]([https://github.com/Ayshak532/DevOps-Project-Zomato-AyshaK.git])
 
 **Repository:**  
-https://github.com/Ayshak532/Zomato-Project.git
-
+[https://github.com/Ayshak532/DevOps-Project-Zomato-AyshaK.git]
 ---
 
 ## 📹 **DevOps Project Video**
