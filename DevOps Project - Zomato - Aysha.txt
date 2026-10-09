@@ -1,7 +1,11 @@
-DevOps Project - Dr. Ayshak
-Deployment of ZOMATO Project - DevSecOps Approach
+DevOps Project - Aysha K
+Deployment of Zomato Clone - DevSecOps Approach
 --------------------------------------------
-Repo URL: https://github.com/Ayshak532/Zomato-Project.git
+Repo URL: https://github.com/Ayshak532/DevOps-Project-Zomato-AyshaK.git
+
+Tutorial / learning reference:
+https://youtu.be/GyoI6-I68aQ?si=qUA8GDYN8-Q3caQC
+This is a hands-on learning implementation based on the tutorial above. Retain applicable copyright and license notices for reused code, manifests, and assets.
 
 
 1. Launch an Instance (Ubuntu, 24.04, t2.large, 30 GB)
@@ -60,7 +64,7 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 sudo usermod -aG docker ubuntu
-sudo chmod 777 /var/run/docker.sock
+# Security: do not make /var/run/docker.sock world-writable; use trusted Docker group access only.
 newgrp docker
 sudo systemctl status docker
 
@@ -178,7 +182,7 @@ pipeline {
 
         stage ("Git Checkout") {
             steps {
-                git 'https://github.com/Ayshak532/Zomato-Project.git'
+                git 'https://github.com/Ayshak532/DevOps-Project-Zomato-AyshaK.git'
             }
         }
 
@@ -235,17 +239,7 @@ pipeline {
             }
         }
 
-        stage('Docker Scout Image') {
-            steps {
-                script{
-                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
-                        sh 'docker-scout quickview ayshak/zomato:latest'
-                        sh 'docker-scout cves ayshak/zomato:latest'
-                        sh 'docker-scout recommendations ayshak/zomato:latest'
-                    }
-                }
-            }
-        }
+        // Docker Scout stage omitted: install and verify Docker Scout before enabling it.
 
         stage ("Deploy to Container") {
             steps {
@@ -735,7 +729,7 @@ Make sure in the vs code editor the cluster will get created.
 As said earlier it will take atleast 20 minutes.
 
 
-Once the cluster is ready, you will see "EKS Cluster "ayshakcluster" in "us-east-1" region is ready" in vs code editor.
+Once the cluster is ready, verify that the region shown matches ap-northeast-1 (Tokyo), which is used in the commands above.
 
 wait till you see this.
 
@@ -784,7 +778,7 @@ eksctl utils associate-iam-oidc-provider --region ap-northeast-1 --cluster aysha
 (OR)
 
 eksctl utils associate-iam-oidc-provider `
-    --region uap-northeast-1 `
+    --region ap-northeast-1 `
     --cluster ayshakcluster `
     --approve
 
@@ -1117,6 +1111,9 @@ If you see error in Prometheus under "k8s", open port number 9100 for the EC2 in
 
 
 After everything is done.
+
+Public-repository safety reminder:
+Do not commit AWS keys, passwords, private keys, access tokens, kubeconfig files, or real secret values. Keep Jenkins credentials in Jenkins Credentials. Restrict Jenkins (8080), SonarQube (9000), Prometheus (9090), Grafana (3000), and exporter ports to trusted IPs/private networks rather than exposing them publicly by default.
 
 Delete everything.
 
