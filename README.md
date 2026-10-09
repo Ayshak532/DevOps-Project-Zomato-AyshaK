@@ -130,3 +130,14 @@ I welcome constructive feedback and suggestions to improve this project and my p
 ---
 
 **Thanks for visiting my repository!** 🚀
+
+## 📸 Project Screenshots
+
+### Jenkins CI/CD Pipeline
+![Jenkins Pipeline](screenshots/jenkins-pipeline.png)
+
+### Argo CD Deployment
+![Argo CD](screenshots/argocd-healthy-synced.png)
+
+### Grafana Monitoring Dashboard
+![Grafana Dashboard](screenshots/grafana-monitoring.png)
